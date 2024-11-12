@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client-side Multi View</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <script src="app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.0/shaka-player.compiled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eme-encryption-scheme-polyfill@2.0.4/dist/eme-encryption-scheme-polyfill.js"></script>
+</head>
+<body>
+  <header>CLIENT-SIDE MULTI-VIEW APP</header>
+  <div class="container">
+    <div class="video-container">
+      <div class="top-bar-column asset-col">
+        <div class="drop-down-list">
+            <select name="dropdownA" id="dropdownA"> <!-- dropdownA -->
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/generated/main.mpd">DASH Generated Stream</option>
+              <option value="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd">Big Buck Bunny DASH</option>
+              <option value="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Big Buck Bunny MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/ads/Ad-generated-30s/ad-generated-30s.mpd">DASH Generated Ad Stream</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/ads/ad1/hsar1039-soip-ads-prd.cdn01.skycdp.com/ads-gb-s8-prd-ak.cdn01.skycdp.com/v1/frag/bmff/t/ipvodad7/ed9e9eba-e818-413f-97ea-10cb3559ac31/1628085935274/AD/HD/manifest.mpd">Ad Stream</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoA" class="video-player-a">
+          <source src="placeholder.mp4" type="video/ave">
+      </video>
+
+    </div>
+    <div class="video-container">
+      <div class="top-bar-column">
+        <div class="drop-down-list">
+            <select name="dropdownB" id="dropdownB"> <!-- dropdownB -->
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/ads/ad1/hsar1039-soip-ads-prd.cdn01.skycdp.com/ads-gb-s8-prd-ak.cdn01.skycdp.com/v1/frag/bmff/t/ipvodad7/ed9e9eba-e818-413f-97ea-10cb3559ac31/1628085935274/AD/HD/manifest.mpd">Ad Stream</option>
+              <option value="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4">Elephants Dream MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/generated/main.mpd">DASH Generated Stream</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/generated/main_mp4.m3u8">Frag-MP4 Generated Stream</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/generated/main.m3u8">HLS Generated Stream</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoB" class="video-player-b" pip="true">
+        <source src="placeholder.mp4" type="video/ave">
+      </video>
+    </div>
+  </div>
+</body>
+</html>
